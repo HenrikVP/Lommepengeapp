@@ -16,10 +16,12 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.google.gson.Gson;
+
 import java.io.File;
 import java.util.Calendar;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +34,8 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
         initGUI();
+
+        Gson gson;
     }
 
     void initGUI() {
@@ -41,8 +45,6 @@ public class MainActivity extends AppCompatActivity {
         myFirstButton.setOnClickListener(v -> {
             sendToSecondActivity(input.getText().toString());
         });
-
-
     }
 
     void sendToSecondActivity(String text) {
